@@ -282,6 +282,7 @@ exit
 end
 copy running-config startup-config
 ```
+![VLANs and IP Interfaces on Router1](topology.png/VLANs%20and%20IP%20interfaces%20displayed%20on%20Router1.png)
 
 ### R1 Stage 3 command summary
 

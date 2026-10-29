@@ -514,6 +514,8 @@ router ospf 10
 end
 copy running-config startup-config
 ```
+![Router2 Routing Table](topology.png/IPs%20routable%20on%20Router%202%20display.png)
+
 
 ### OSPF command summary
 

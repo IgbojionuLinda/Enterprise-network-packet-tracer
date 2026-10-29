@@ -33,7 +33,7 @@ The network contains three Cisco 2911 routers, two Cisco 2960-24TT switches, and
 | R3 | Cisco 2911 | Simulated ISP router and ISP test destination |
 | SW1 | Cisco 2960-24TT | HQ access switch |
 | SW2 | Cisco 2960-24TT | Branch access switch |
-| 24 PCs | Packet Tracer end devices | three departments at each site, four PCs per department |
+| 24 PCs | Packet Tracer end devices | four departments at each site, three PCs per departments |
 
 ## Logical Topology and Cabling
 

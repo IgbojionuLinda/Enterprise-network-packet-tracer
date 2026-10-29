@@ -28,6 +28,8 @@ The network contains three Cisco 2911 routers, two Cisco 2960-24TT switches, and
 - Configure NAT/PAT and investigate translation behaviour.
 - Verify the network with Cisco IOS `show` commands, ping tests, and Packet Tracer Simulation Mode.
 
+  ![Packet Tracer Simulation](topology.png/Packet%20Simulation%20.png)
+
 ## Devices and Roles
 
 | Device | Model | Role |

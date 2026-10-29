@@ -609,6 +609,8 @@ exit
 end
 copy running-config startup-config
 ```
+![eBGP Configuration and Output](topology.png/eBGP%20command%20and%20output.png)
+
 
 ## Stage 8B — Configure eBGP on R3 (ISP AS 65000)
 

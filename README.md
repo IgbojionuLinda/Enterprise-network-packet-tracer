@@ -8,6 +8,11 @@ BGP, route redistribution, and NAT/PAT.
 
 The network contains three Cisco 2911 routers, two Cisco 2960-24TT switches, and 24 end-user PCs. Each office has four departments, with three PCs per department.
 
+## Network Topology
+The diagram below illustrates the enterprise network connecting the headquarters, branch office, and simulated ISP.
+![Enterprise Network Topology]
+(topology.png)
+
 > **Project status:** DHCP, inter-VLAN routing, the HQ–Branch WAN link, OSPF, the eBGP neighbor relationship, and end-to-end ping from a Branch PC to the simulated ISP loopback were tested successfully. NAT/PAT commands were configured, and NAT translation table was successful after the test ping.
 
 ## Objectives

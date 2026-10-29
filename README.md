@@ -50,18 +50,18 @@ The network contains three Cisco 2911 routers, two Cisco 2960-24TT switches, and
 | Department | VLAN | Network | Default gateway |
 |---|---:|---|---|
 | HR | 10 | 10.1.10.0/24 | 10.1.10.1 |
-| Finance | 20 | 10.1.20.0/24 | 10.1.20.1 |
-| IT | 30 | 10.1.30.0/24 | 10.1.30.1 |
-| Sales | 40 | 10.1.40.0/24 | 10.1.40.1 |
+| SALES | 20 | 10.1.20.0/24 | 10.1.20.1 |
+| FINANCE | 30 | 10.1.30.0/24 | 10.1.30.1 |
+| NOC | 40 | 10.1.40.0/24 | 10.1.40.1 |
 
 ### Branch VLANs
 
 | Department | VLAN | Network | Default gateway |
 |---|---:|---|---|
 | HR | 110 | 10.2.10.0/24 | 10.2.10.1 |
-| Finance | 120 | 10.2.20.0/24 | 10.2.20.1 |
-| IT | 130 | 10.2.30.0/24 | 10.2.30.1 |
-| Sales | 140 | 10.2.40.0/24 | 10.2.40.1 |
+| SALES | 120 | 10.2.20.0/24 | 10.2.20.1 |
+| FINANCE | 130 | 10.2.30.0/24 | 10.2.30.1 |
+| NOC | 140 | 10.2.40.0/24 | 10.2.40.1 |
 
 DHCP excludes `.1` through `.20` in each department subnet. DHCP clients can receive addresses beginning at `.21`. The subnet mask is `255.255.255.0`.
 
@@ -84,9 +84,9 @@ The addresses `203.0.113.0/24` and `198.51.100.0/24` are documentation ranges. T
 | Ports | Department | VLAN |
 |---|---|---:|
 | Fa0/1–Fa0/4 | HQ HR PCs | 10 |
-| Fa0/5–Fa0/8 | HQ Finance PCs | 20 |
-| Fa0/9–Fa0/12 | HQ IT PCs | 30 |
-| Fa0/13–Fa0/16 | HQ Sales PCs | 40 |
+| Fa0/5–Fa0/8 | HQ SALES PCs | 20 |
+| Fa0/9–Fa0/12 | HQ SALES PCs | 30 |
+| Fa0/13–Fa0/16 | HQ NOC PCs | 40 |
 | Gi0/1 | Trunk to R1 G0/0 | 10, 20, 30, 40 |
 
 ### SW2 — Branch
@@ -94,9 +94,9 @@ The addresses `203.0.113.0/24` and `198.51.100.0/24` are documentation ranges. T
 | Ports | Department | VLAN |
 |---|---|---:|
 | Fa0/1–Fa0/4 | Branch HR PCs | 110 |
-| Fa0/5–Fa0/8 | Branch Finance PCs | 120 |
-| Fa0/9–Fa0/12 | Branch IT PCs | 130 |
-| Fa0/13–Fa0/16 | Branch Sales PCs | 140 |
+| Fa0/5–Fa0/8 | Branch SALES PCs | 120 |
+| Fa0/9–Fa0/12 | Branch FINANCE PCs | 130 |
+| Fa0/13–Fa0/16 | Branch NOC PCs | 140 |
 | Gi0/1 | Trunk to R2 G0/0 | 110, 120, 130, 140 |
 
 ---
@@ -172,7 +172,7 @@ copy running-config startup-config
 | `hostname SW1` | Sets the switch hostname to SW1. |
 | `no ip domain-lookup` | Stops the switch from attempting DNS lookup when a command is mistyped. |
 | `vlan 10` / `vlan 20` / `vlan 30` / `vlan 40` | Creates the four HQ VLANs. |
-| `name HR` / `name SLAES` / `name FINANCE` / `name NOC` | Gives each VLAN a readable name. |
+| `name HR` / `name SALES` / `name FINANCE` / `name NOC` | Gives each VLAN a readable name. |
 | `interface range fastEthernet ...` | Selects a group of access ports together. |
 | `description ...` | Documents the purpose of the selected ports. |
 | `switchport mode access` | Configures the ports as access ports rather than trunks. |
@@ -261,17 +261,17 @@ interface gigabitEthernet 0/0.10
  ip address 10.1.10.1 255.255.255.0
 exit
 interface gigabitEthernet 0/0.20
- description HQ-FINANCE-GATEWAY
+ description HQ-SALES-GATEWAY
  encapsulation dot1Q 20
  ip address 10.1.20.1 255.255.255.0
 exit
 interface gigabitEthernet 0/0.30
- description HQ-IT-GATEWAY
+ description HQ-FINANCE-GATEWAY
  encapsulation dot1Q 30
  ip address 10.1.30.1 255.255.255.0
 exit
 interface gigabitEthernet 0/0.40
- description HQ-SALES-GATEWAY
+ description HQ-NOC-GATEWAY
  encapsulation dot1Q 40
  ip address 10.1.40.1 255.255.255.0
 exit
@@ -309,17 +309,17 @@ interface gigabitEthernet 0/0.110
  ip address 10.2.10.1 255.255.255.0
 exit
 interface gigabitEthernet 0/0.120
- description BR-FINANCE-GATEWAY
+ description BR-SALES-GATEWAY
  encapsulation dot1Q 120
  ip address 10.2.20.1 255.255.255.0
 exit
 interface gigabitEthernet 0/0.130
- description BR-IT-GATEWAY
+ description BR-FINANCE-GATEWAY
  encapsulation dot1Q 130
  ip address 10.2.30.1 255.255.255.0
 exit
 interface gigabitEthernet 0/0.140
- description BR-SALES-GATEWAY
+ description BR-NOC-GATEWAY
  encapsulation dot1Q 140
  ip address 10.2.40.1 255.255.255.0
 exit

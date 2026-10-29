@@ -107,8 +107,7 @@ The addresses `203.0.113.0/24` and `198.51.100.0/24` are documentation ranges. T
 
 # Configuration Commands and Explanations
 
-The following sections document the configuration commands used in the lab. Commands are grouped by device and stage. 
-Commands used only for verification are listed separately.
+The following sections document the configuration commands used in the lab. Commands are grouped by device and stage.
 
 ## Stage 1 — Physical topology and cabling
 
@@ -189,6 +188,8 @@ copy running-config startup-config
 | `exit` | Leaves the current configuration submode. |
 | `end` | Returns to privileged EXEC mode. |
 | `copy running-config startup-config` | Saves the active configuration so it persists after a reload. |
+
+![HQ Interdepartment Connectivity Test](topology.png/HQ%20successfully%20ping%20to%20another%20depth.png)
 
 ## Stage 2B — Configure SW2 (Branch switch)
 

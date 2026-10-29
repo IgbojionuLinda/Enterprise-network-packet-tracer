@@ -165,6 +165,8 @@ exit
 end
 copy running-config startup-config
 ```
+![Branch Finance to HR Ping Test](topology.png/Branch%20Finance%20depth%20ping%20to%20branch%20HR%20depath%20successfully.png)
+
 
 ### SW1 command summary
 

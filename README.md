@@ -9,6 +9,7 @@ BGP, route redistribution, and NAT/PAT.
 The network contains three Cisco 2911 routers, two Cisco 2960-24TT switches, and 24 end-user PCs. Each office has four departments, with three PCs per department.
 
 ## Network Topology
+The diagram below illustrates the headquarters, branch office, and simulated ISP.
 
 ![Enterprise Network Packet Tracer] (./topology.png)
 

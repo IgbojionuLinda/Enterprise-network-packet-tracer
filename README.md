@@ -838,3 +838,5 @@ A Branch PC successfully pinged `198.51.100.1` after the NAT/PAT commands were e
 
 This lab demonstrates how an enterprise network can be segmented into departmental VLANs, provide automatic IP configuration, route between sites using OSPF, 
 and exchange routes with a simulated ISP using eBGP. It also documents the difference between successful IP reachability and verified NAT translation.
+
+![Packet Tracer Simulation Display](topology.png/Packet%20Simulation%20display.png)
